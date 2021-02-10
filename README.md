@@ -21,3 +21,9 @@ PLEASE MAKE SURE THE CONTENT IS RAW . DO NOT SEND WITH CUSTOM POLICIES OR ELSE. 
 ### FOR WHAT UTILISATION WAS IT CREATED ?
 
 It was created in the goal of creating packages in python than you can easily install and create in a short time .
+
+
+## HOW DO I DELETE INSTALLED EXTENSION ?
+
+Choose first option then type extension name (better Ctrl+C/Ctrl+V the name)
+It will remove it and all its files
