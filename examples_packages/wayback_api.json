@@ -1,6 +1,6 @@
 {
         "author":"Presterity",
         "name":"Wayback_API",
-		"blurb": "Module for accessing the web archive wayback machine (https://archive.org/web/).",
-		"package":["https://raw.githubusercontent.com/Presterity/py-script/master/wayback_api.py"]
+	"blurb": "Module for accessing the web archive wayback machine (https://archive.org/web/).",
+	"package":["https://raw.githubusercontent.com/Presterity/py-script/master/wayback_api.py"]
 }
