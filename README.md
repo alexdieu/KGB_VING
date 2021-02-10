@@ -1,5 +1,5 @@
 # KGB_VING
-KGB_VING is an open-source package installer for python .
+KGB_VING is an open-source package installer/Manager for python .
 
 ## HOW DO I CREATE PACKAGE ?
 
