@@ -1,0 +1,6 @@
+{
+        "author":"StevePaget",
+        "name":"Pygame_Functions",
+		"blurb": "A set of functions that make working with Pygame and Python much easier.",
+		"package":["https://raw.githubusercontent.com/StevePaget/Pygame_Functions/master/pygame_functions.py"]
+}
