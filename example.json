@@ -1,0 +1,6 @@
+{
+        "author":"Alexdieu",
+        "name":"PyurlscannerLIB",
+		"blurb": "Scanning an URL and gather information about .",
+		"package":["https://raw.githubusercontent.com/alexdieu/PyurlscannerLIB/master/urlscanner.py"]
+}
