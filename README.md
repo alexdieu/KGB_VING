@@ -8,7 +8,7 @@ Create your own json file
 ```
 {
         "author":"Alexdieu",
-        "name":"PyurlscannerLIB",
+        "name":"urlscanner",
 		    "blurb": "Scanning an URL and gather information about .",
 		    "package":["https://raw.githubusercontent.com/alexdieu/PyurlscannerLIB/master/urlscanner.py"]
 }
