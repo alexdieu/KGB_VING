@@ -16,6 +16,8 @@ Create your own json file
 
 You can have mutiple packages . (like ` "package":["https://raw.githubusercontent.com/alexdieu/PyurlscannerLIB/master/urlscanner.py", "other1.com/example.py", "other.com/exmaple.py]`)
 
+PLEASE MAKE SURE THE CONTENT IS RAW . DO NOT SEND WITH CUSTOM POLICIES OR ELSE. JUST UPLOAD THE FILE AND GET THE RAW URL .
+
 ### FOR WHAT UTILISATION WAS IT CREATED ?
 
 It was created in the goal of creating packages in python than you can easily install and create in a short time .
