@@ -14,4 +14,4 @@ Create your own json file
 }
 ```
 
-You can have mutiple packages . (like ` "package":["https://raw.githubusercontent.com/alexdieu/PyurlscannerLIB/master/urlscanner.py", "other1.com/example.py", "other.com/exmaple.py]`
+You can have mutiple packages . (like ` "package":["https://raw.githubusercontent.com/alexdieu/PyurlscannerLIB/master/urlscanner.py", "other1.com/example.py", "other.com/exmaple.py]`)
