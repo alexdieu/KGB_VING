@@ -108,6 +108,7 @@ def down(url, name):
         sys.exit(3)
  
 def install(packg):
+    installed = []
     print("Do you want to install this extension ?")
     while True:
         a = input("Please answer by yes or no\n")
@@ -116,6 +117,8 @@ def install(packg):
                 name = url2name(i)
                 print("Trying to get " + name)
                 down(i,name)
+                installed.append(name)
+            return installed
             break
         elif "n" in a:
             print("Exiting ...")
@@ -124,3 +127,44 @@ def install(packg):
         else:
             pass
     return 0
+
+def checkinstalled():
+    try:
+        import json
+    except:
+        missing("json")
+    with open('installed.json', 'r') as f:
+        try:
+            data = json.load(f)
+            return data
+        except json.decoder.JSONDecodeError:
+            return {}
+            
+def installsaver(temp):
+    try:
+        import json
+    except:
+        missing("json")
+    with open('installed.json', 'w') as f:
+        json.dump(temp, f)
+        
+def deletepackg(temp, name, path, origi):
+    while True:
+        if name == "exit":
+            exit()
+        elif name in temp:
+            delfiles = temp[name]
+            del temp[name]
+            os.chdir(path)
+            for i in delfiles:
+                if os.path.exists(i):
+                    os.remove(i)
+                else:
+                    print("The file %s has already being erased !" % i) 
+            print("Succefuly removed %s" % name)
+            os.chdir(origi)
+            return temp
+        else:
+            print("Uknown extension ?!?")
+          
+    
