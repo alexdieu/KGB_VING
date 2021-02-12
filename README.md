@@ -1,6 +1,18 @@
 # KGB_VING
 KGB_VING is an open-source package installer/Manager for python .
-This project was made to import and install new functions in python easily . You can't extend your package with C/C++ . You can extend it with pip packages, just make a system if the user don't have pip or else .
+This project was made to import and install new functions in python easily . You can't extend your package with C/C++ . You can extend it with pip packages, just make a system if the user don't have pip or the pip module required  .
+
+For the system , you can do :
+
+```
+import os
+try:
+	import vision
+except ModuleNotFoundError:
+	print("You don't have vision installed!Installing...")
+	os.system("python -m pip install vision")
+```
+
 
 ## HOW DO I CREATE PACKAGE ?
 
