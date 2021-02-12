@@ -54,6 +54,14 @@ def jsoneds(pathe):
         data = json.loads(f.read())
         return data['author'],data["name"],data["blurb"],data["package"]
         
+def JSONURL(stre):
+    try:
+        import json
+    except:
+        missing("json")
+    data = json.loads(stre)
+    return data['author'],data["name"],data["blurb"],data["package"]    
+    
 def prz(b, a, c):
     print("PACKAGE INFO ------------")
     print("|%s| by @%s" % (a,b))
@@ -72,7 +80,7 @@ def down(url, name):
         from urllib.request import urlopen
     except:
         missing("urllib")
-    if 1 == 1:
+    try:
         dt = urlopen(url)
         dtb = dt.read()
         if ".py" in name:
@@ -99,10 +107,10 @@ def down(url, name):
                     print("Succes for %s" % name)
                     break
             elif "n" in c:
-                sys.exit(1)
+                exit()
             else:
                 pass
-    else:
+    except:
         print("Couldn't get the file : %s / url = %s" % (name,url))
         time.sleep(2)
         sys.exit(3)
@@ -167,4 +175,34 @@ def deletepackg(temp, name, path, origi):
         else:
             print("Uknown extension ?!?")
           
+
+def jsonget(URL):
+    try:
+        from urllib.request import urlopen
+    except:
+        missing("urllib")
+    if "github.com" in URL:
+        if "/blob/" in URL:
+            URL = URL.replace("/blob/", "/")
+        if "raw.github" in URL:
+            dt = urlopen(URL)
+        else:
+            if "http://" in URL:
+                URI = URL.split("http://github.com/")[1]
+                URL = "https://raw.githubusercontent.com/" + URI
+            elif "https://" in URL:
+                URI = URL.split("https://github.com/")[1]
+                URL = "https://raw.githubusercontent.com/" + URI
+            else:
+                URI = URL.split("github.com/")[1]
+                URL = "https://raw.githubusercontent.com/" + URI        
+    else:
+        print("WARNING : THE FILE ISN'T HOST ON GITHUB.COM . TRYING TO GET IT ANYWAY")
+    try:
+        dt = urlopen(URL)
+    except:
+        print("COULDN'T RESOLVE URL")
+        exit()
+    dtb = dt.read()
+    return JSONURL(dtb)
     

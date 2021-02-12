@@ -14,6 +14,7 @@ except:
     utileds.failib()
 
 def jsoninstaller():
+    global inst, path
     root = Tk()
     root.filename = filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("json files","*.json"),("all files","*.*")))
     root.destroy()
@@ -26,9 +27,20 @@ def jsoninstaller():
     utileds.installsaver(temp)
     print("Succefully installed %s by %s" % (name, auth))
     
+def jsoninstallerURL(URL):
+    global inst, path
+    auth, name, blurb, packg = utileds.jsonget(URL)
+    utileds.prz(auth, name, blurb)
+    installed = utileds.install(packg)
+    os.chdir(inst)
+    temp = utileds.checkinstalled()
+    temp[name] = installed
+    utileds.installsaver(temp)
+    print("Succefully installed %s by %s" % (name, auth))
+    
 print("What do you want to do ?")
 while True:
-    t = input("1.Manage installed packages\n2.Install new package from json file\n(answer by 1 or 2)\n")
+    t = input("1.Manage installed packages\n2.Install new package from json file\n3.Install package from URL\n(answer by 1,2 or 3)\n")
     if t == "1":
         os.chdir(inst)
         if utileds.checkinstalled() == {}:
@@ -49,5 +61,8 @@ while True:
         except:
             utileds.failib()
         jsoninstaller()
+    elif t == "3":
+        URL = input("URL ?\n")
+        jsoninstallerURL(URL)
     else:
         pass
