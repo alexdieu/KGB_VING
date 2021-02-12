@@ -9,7 +9,6 @@ import os
 try:
 	import vision
 except ModuleNotFoundError:
-	print("You don't have vision installed!Installing...")
 	os.system("python -m pip install vision")
 ```
 
