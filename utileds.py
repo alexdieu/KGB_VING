@@ -52,7 +52,11 @@ def jsoneds(pathe):
         missing("json")
     with open(pathe) as f:
         data = json.loads(f.read())
-        return data['author'],data["name"],data["blurb"],data["package"]
+        try:
+           return data['author'],data["name"],data["blurb"],data["package"]
+        else:
+            print("Couldn't extract data from JSON file. Are you sure the syntax is correct ?")
+            exit()
         
 def JSONURL(stre):
     try:
